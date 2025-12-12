@@ -6,7 +6,7 @@
             return {
                 id: 'opentab',
                 name: 'Open Tab',
-                color1: '##ffda00',
+                color1: '#ffda00',
                 blocks: [
                     {
                         opcode: 'openTab',
