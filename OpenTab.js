@@ -1,32 +1,27 @@
 (function(Scratch) {
-    'use strict';
-
-    class OpenTabExtension {
+    class OpenTab {
         getInfo() {
             return {
-                id: 'opentab',
-                name: 'Open Tab',
-                color1: '#ffda00',
+                id: "opentab",
+                name: "Open Tab",
+                color1: "#FFB300",
                 blocks: [
                     {
-                        opcode: 'openTab',
+                        opcode: "openTab",
                         blockType: Scratch.BlockType.COMMAND,
-                        text: 'open [URL] in new tab',
+                        text: "open tab [URL]",
                         arguments: {
-                            URL: {
-                                type: Scratch.ArgumentType.STRING,
-                                defaultValue: 'https://frost307.itch.io'
-                            }
+                            URL: { type: Scratch.ArgumentType.STRING, defaultValue: "https://example.com" }
                         }
                     }
                 ]
             };
         }
 
-        openTab(args) {
-            window.open(args.URL, '_blank');
+        openTab({ URL }) {
+            window.open(URL, "_blank");
         }
     }
 
-    Scratch.extensions.register(new OpenTabExtension());
+    Scratch.extensions.register(new OpenTab());
 })(Scratch);
